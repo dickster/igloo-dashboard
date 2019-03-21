@@ -7,7 +7,8 @@
         <md-card>
 
           <md-card-header data-background-color="green">
-            <h4 class="title">Job Results </h4>
+            <h4 class="title">{{item.date}}</h4>
+            <h4 class="title">Job Results</h4>
           </md-card-header>
           <md-card-content>
           </md-card-content>
@@ -35,6 +36,7 @@
 import { SimpleTable, JobRunsTable, OrderedTable } from "@/components";
 
 export default {
+    props:['item'],
   components: {
     OrderedTable,
     SimpleTable,

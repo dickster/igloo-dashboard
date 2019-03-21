@@ -43,7 +43,7 @@
             </md-table-toolbar>
             <md-table-row slot="md-table-row" slot-scope="{ item }">
                 <md-table-cell md-label="Date">
-                    <router-link to="/results">
+                    <router-link :to="getRoute(item)">
                         <a>{{ item.date }}</a>
                     </router-link>
                 </md-table-cell>
@@ -72,8 +72,8 @@
             }
         },
         methods: {
-            gotoResults(item) {
-
+            getRoute(item) {
+                return {name:'Job Results', params: {item}}
             }
         },
         computed: {
