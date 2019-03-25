@@ -8,8 +8,8 @@
                     </md-card-header>
                     <md-card-content>
                         <basic-chart
-                                :width="200"
-                                :height="200"
+                                :width="300"
+                                :height="300"
                                 :options="options"
                                 :chartdata="chartdata">
                         </basic-chart>
@@ -251,16 +251,11 @@
                     title: {
                         text: ''
                     },
-                    grid: {
-                        padding: {
-                            // right: 20
-                        }
-                    }
                 },
                 options: {
                     onClick: function (evt, item) {
-                        var label = item[0]['_model'].label
-                        console.log(JSON.stringify(item[0]['_model'].label))
+                        // var label = item[0]['_model'].label
+                        // console.log(JSON.stringify(item[0]['_model'].label))
                         //console.log(label)
                     },
                     maintainAspectRatio: false,
