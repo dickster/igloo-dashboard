@@ -16,6 +16,9 @@ import Notifications from "./components/NotificationPlugin";
 import MaterialDashboard from "./material-dashboard";
 
 import Chartist from "chartist";
+import VueApexCharts from 'vue-apexcharts'
+
+
 
 // configure router
 const router = new VueRouter({
@@ -30,6 +33,9 @@ Vue.use(MaterialDashboard);
 Vue.use(GlobalComponents);
 Vue.use(GlobalDirectives);
 Vue.use(Notifications);
+Vue.use(VueApexCharts)
+
+Vue.component('apexchart', VueApexCharts);
 
 /* eslint-disable no-new */
 new Vue({

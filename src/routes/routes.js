@@ -3,9 +3,11 @@ import DashboardLayout from "@/pages/Layout/DashboardLayout.vue";
 import Dashboard from "@/pages/Dashboard.vue";
 import UserProfile from "@/pages/UserProfile.vue";
 import TableList from "@/pages/TableList.vue";
+import TablePreview from "@/pages/TablePreview.vue";
 import JobRuns from "@/pages/JobRuns.vue";
 import JobResults from "@/pages/JobResults.vue";
 import Typography from "@/pages/Typography.vue";
+import JobConfigurations from "@/pages/JobConfigurations.vue";
 import Icons from "@/pages/Icons.vue";
 import Maps from "@/pages/Maps.vue";
 import Notifications from "@/pages/Notifications.vue";
@@ -38,9 +40,21 @@ const routes = [
                 component: TableList
             },
             {
+                path: "configurations",
+                name: "Job Configurations",
+                component: JobConfigurations,
+                props:true
+            },
+            {
                 path: "results",
                 name: "Job Results",
                 component: JobResults,
+                props: true
+            },
+            {
+                path: "tableview",
+                name: "Table Preview",
+                component: TablePreview,
                 props: true
             },
             {
@@ -54,8 +68,8 @@ const routes = [
                 component: Icons
             },
             {
-                path: "maps",
-                name: "Maps",
+                path: "favourites",
+                name: "Favourites",
                 meta: {
                     hideFooter: true
                 },

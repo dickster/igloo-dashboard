@@ -12,7 +12,7 @@
         <md-icon>directions_run</md-icon>
         <p>Job Runs</p>
       </sidebar-link>
-      <sidebar-link to="/typography">
+      <sidebar-link to="/configurations">
         <md-icon>library_books</md-icon>
         <p>Job Configurations</p>
       </sidebar-link>
@@ -24,7 +24,7 @@
         <md-icon>notifications</md-icon>
         <p>Notifications</p>
       </sidebar-link>
-      <sidebar-link to="/maps">
+      <sidebar-link to="/favourites">
         <md-icon>star</md-icon>
         <p>Favourites</p>
       </sidebar-link>

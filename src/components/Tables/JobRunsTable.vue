@@ -163,7 +163,7 @@
     }
 
     .md-table {
-        min-height: 400px;
+        min-height: 350px;
     }
 
 
