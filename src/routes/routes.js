@@ -8,10 +8,14 @@ import JobRuns from "@/pages/JobRuns.vue";
 import JobResults from "@/pages/JobResults.vue";
 import Typography from "@/pages/Typography.vue";
 import JobConfigurations from "@/pages/JobConfigurations.vue";
+import JobConfiguration from "@/pages/JobConfiguration.vue";
+import CatData from "@/pages/CatData.vue";
+import ExcelData from "@/pages/ExcelData.vue";
+import DbData from "@/pages/DbData.vue";
 import Icons from "@/pages/Icons.vue";
 import Maps from "@/pages/Maps.vue";
 import Notifications from "@/pages/Notifications.vue";
-import UpgradeToPRO from "@/pages/UpgradeToPRO.vue";
+
 
 const routes = [
     {
@@ -23,6 +27,21 @@ const routes = [
                 path: "dashboard",
                 name: "Home",
                 component: Dashboard
+            },
+            {
+                path: "/data/cat",
+                name: "Cat Data",
+                component: CatData
+            },
+            {
+                path: "/data/excel",
+                name: "Excel Data",
+                component: ExcelData
+            },
+            {
+                path: "/data/db",
+                name: "Database ",
+                component: DbData
             },
             {
                 path: "jobruns",
@@ -43,6 +62,12 @@ const routes = [
                 path: "configurations",
                 name: "Job Configurations",
                 component: JobConfigurations,
+                props:true
+            },
+            {
+                path: "configuration",
+                name: "Job Configuration",
+                component: JobConfiguration,
                 props:true
             },
             {
@@ -80,11 +105,7 @@ const routes = [
                 name: "Notifications",
                 component: Notifications
             },
-            {
-                path: "upgrade",
-                name: "Upgrade to PRO",
-                component: UpgradeToPRO
-            }
+
         ]
     }
 ];

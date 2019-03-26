@@ -21,26 +21,27 @@
 
       </div>
     </div>
+
     <md-speed-dial class="md-bottom-right md-accent">
-      <md-speed-dial-target>
-        <md-icon>add</md-icon>
+      <md-speed-dial-target >
+        <md-icon >add</md-icon>
       </md-speed-dial-target>
 
       <md-speed-dial-content>
-        <md-button class="md-icon-button">
-          <md-tooltip md-direction="left">Add CAT</md-tooltip>
-          <md-icon>pie_chart</md-icon>
-        </md-button>
+        <router-link tag="md-button"  to="/data/cat" class="md-raised md-primary md-icon-button">
+          <md-tooltip md-direction="right">Add CAT</md-tooltip>
+          <md-icon class="speed-cat">pie_chart</md-icon>
+        </router-link>
 
-        <md-button class="md-icon-button">
-          <md-tooltip md-direction="left">Add Excel</md-tooltip>
-          <md-icon>insert_drive_file</md-icon>
-        </md-button>
+        <router-link tag="md-button"  to="/data/excel" class="md-raised md-primary md-icon-button">
+          <md-tooltip md-direction="right">Add Excel</md-tooltip>
+          <md-icon class="speed-excel">insert_drive_file</md-icon>
+        </router-link>
 
-        <md-button class=" md-icon-button">
-          <md-tooltip md-direction="left">Add Database</md-tooltip>
-          <md-icon>view_day</md-icon>
-        </md-button>
+        <router-link tag="md-button"  to="/data/db" class="md-raised md-primary md-icon-button">
+          <md-tooltip md-direction="right">Add Database</md-tooltip>
+          <md-icon class="speed-db">view_day</md-icon>
+        </router-link>
       </md-speed-dial-content>
     </md-speed-dial>
   </div>
@@ -59,12 +60,19 @@ export default {
 
 <style scoped>
   .md-speed-dial> button {
-    background: #ab69e4 !important;
+    background: #29a2e4 !important;
 
   }
-  .md-speed-dial-content >button {
-    background: #d7f6c2 !important;
+  .md-speed-dial-content >button:nth-child(1) {
+    background: #f0b330 !important;
+
+  }.md-speed-dial-content >button:nth-child(2) {
+    background: #f08348 !important;
+
+  }.md-speed-dial-content >button:nth-child(3) {
+    background: #eb4642 !important;
 
   }
+
 
 </style>
