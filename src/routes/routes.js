@@ -9,6 +9,7 @@ import JobResults from "@/pages/JobResults.vue";
 import Typography from "@/pages/Typography.vue";
 import JobConfigurations from "@/pages/JobConfigurations.vue";
 import JobConfiguration from "@/pages/JobConfiguration.vue";
+import ILSTables from "@/pages/ILSTables.vue";
 import CatData from "@/pages/CatData.vue";
 import ExcelData from "@/pages/ExcelData.vue";
 import DbData from "@/pages/DbData.vue";
@@ -54,9 +55,9 @@ const routes = [
                 component: UserProfile
             },
             {
-                path: "table",
-                name: "Tables",
-                component: TableList
+                path: "ils",
+                name: "ILS",
+                component: ILSTables
             },
             {
                 path: "configurations",

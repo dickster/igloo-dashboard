@@ -16,9 +16,9 @@
         <md-icon>library_books</md-icon>
         <p>Job Configurations</p>
       </sidebar-link>
-      <sidebar-link to="/table">
+      <sidebar-link to="/ILS">
         <md-icon>grid_on</md-icon>
-        <p>Data Tables</p>
+        <p>ILS Data</p>
       </sidebar-link>
       <sidebar-link to="/notifications">
         <md-icon>notifications</md-icon>

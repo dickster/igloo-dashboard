@@ -1,7 +1,7 @@
 <template>
   <div class="content">
     <div class="md-layout">
-      <div class="md-layout-item md-medium-size-50">
+      <div class="md-layout-item md-size-50">
         <md-card>
           <md-card-header data-background-color="green">
               <h4 class="title"><md-icon>notifications</md-icon>Notifications</h4>
@@ -12,7 +12,6 @@
           <md-card-content>
             <div class="md-layout ">
               <div class="md-layout-item md-medium-size-100">
-                <h5>Notifications Style</h5>
                 <div class="alert ">
                   <button type="button" aria-hidden="true" class="close">
                     ×
@@ -55,13 +54,10 @@
                 </div>
               </div>
 
-              <div class="md-layout-item md-medium-size-100">
 
-              </div>
             </div>
 
-            <div class="md-layout-item md-size-100">
-            </div>
+
 
           </md-card-content>
         </md-card>
