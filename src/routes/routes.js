@@ -12,6 +12,10 @@ import JobConfiguration from "@/pages/JobConfiguration.vue";
 import ILSTables from "@/pages/ILSTables.vue";
 import CatData from "@/pages/CatData.vue";
 import ExcelData from "@/pages/ExcelData.vue";
+import RiskMeasures from "@/pages/RiskMeasures.vue";
+import HistoricalLosses from "@/pages/ExcelData.vue";
+import Contracts from "@/pages/Contracts.vue";
+import ILS_Tables from "@/pages/ILS_Tables.vue";
 import DbData from "@/pages/DbData.vue";
 import Icons from "@/pages/Icons.vue";
 import Maps from "@/pages/Maps.vue";
@@ -44,7 +48,7 @@ const routes = [
                 name: "Database ",
                 component: DbData
             },
-            {
+                {
                 path: "jobruns",
                 name: "Job Runs",
                 component: JobRuns
@@ -75,6 +79,30 @@ const routes = [
                 path: "results",
                 name: "Job Results",
                 component: JobResults,
+                props: true
+            },
+            {
+                path: "config/contract",
+                name: "Contracts",
+                component: JobResults,
+                props: true
+            },
+            {
+                path: "config/tables",
+                name: "ILS Tables",
+                component: ILS_Tables,
+                props: true
+            },
+            {
+                path: "config/losses",
+                name: "Historical Losses",
+                component: HistoricalLosses,
+                props: true
+            },
+            {
+                path: "config/risks",
+                name: "Risk Measures",
+                component: RiskMeasures,
                 props: true
             },
             {
