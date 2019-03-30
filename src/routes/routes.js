@@ -13,7 +13,7 @@ import ILSTables from "@/pages/ILSTables.vue";
 import CatData from "@/pages/CatData.vue";
 import ExcelData from "@/pages/ExcelData.vue";
 import RiskMeasures from "@/pages/RiskMeasures.vue";
-import HistoricalLosses from "@/pages/ExcelData.vue";
+import HistoricalLosses from "@/pages/HistoricalLosses.vue";
 import Contracts from "@/pages/Contracts.vue";
 import ILS_Tables from "@/pages/ILS_Tables.vue";
 import DbData from "@/pages/DbData.vue";
@@ -84,7 +84,7 @@ const routes = [
             {
                 path: "config/contract",
                 name: "Contracts",
-                component: JobResults,
+                component: Contracts,
                 props: true
             },
             {
