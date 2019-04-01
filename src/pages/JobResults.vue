@@ -1,6 +1,9 @@
 <template>
     <div class="content">
         <div class="md-layout">
+            <div class="md-layout-item md-size-100">
+                <h3> {{item.config}}</h3>
+            </div>
             <div class="md-layout-item md-size-50">
                 <md-card>
                     <md-card-header data-background-color="green">
@@ -30,7 +33,10 @@
                 </md-card>
             </div>
 
-            <md-button> Back to Job Results</md-button>
+
+            <router-link tag="md-button" to="/jobruns" class="back md-raised md-primary">
+                <md-icon>reply</md-icon>Back to Job Runs
+            </router-link>
         </div>
     </div>
 </template>

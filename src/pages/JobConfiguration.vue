@@ -126,7 +126,6 @@
                     name:'Risk Measures',
                     params:{item:item}
                 }
-
             },
             tables(item) {
                 return {

@@ -20,7 +20,7 @@
                             <md-menu-item>
                                 <router-link :to="excel(item)">Import from Excel file</router-link>
                             </md-menu-item>
-                            <md-menu-item >
+                            <md-menu-item>
                                 <router-link :to="db(item)">Import from Database</router-link>
                             </md-menu-item>
                         </md-menu-content>
