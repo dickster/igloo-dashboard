@@ -14,18 +14,18 @@
 
 
                             <div class="md-layout md-gutter">
-                                <div class="md-layout-item md-size-100">
-                                    <md-field>
-                                        <label>Name</label>
-                                        <md-input v-model="item.name"/>
-                                    </md-field>
-                                </div>
-            <div class="md-layout-item md-size-100">
-                                    <md-field>
-                                        <label>Description</label>
-                                        <md-input v-model="item.description"/>
-                                    </md-field>
-                                </div>
+                                <!--<div class="md-layout-item md-size-100">-->
+                                    <!--<md-field>-->
+                                        <!--<label>Name</label>-->
+                                        <!--<md-input v-model="item.name"/>-->
+                                    <!--</md-field>-->
+                                <!--</div>-->
+            <!--<div class="md-layout-item md-size-100">-->
+                                    <!--<md-field>-->
+                                        <!--<label>Description</label>-->
+                                        <!--<md-input v-model="item.description"/>-->
+                                    <!--</md-field>-->
+                                <!--</div>-->
 
                                 <div class="md-layout-item md-size-25">
                                     <md-field>

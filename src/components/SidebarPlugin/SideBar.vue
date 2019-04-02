@@ -41,7 +41,7 @@ export default {
   props: {
     title: {
       type: String,
-      default: "Igloo"
+      default: "ILS"
     },
     activeColor: {
       type: String,

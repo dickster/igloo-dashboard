@@ -94,7 +94,7 @@
                                             <div class="md-table-cell-container">
                                                 Japanese Windstorm
                                                 <md-tooltip md-delay="400" md-direction="top">
-                                                    Date Occurrence : 1/1/2015,  Loss Reporting Date : 1/3/2015
+                                                    <div>Date Occurrence : 1/1/2015</div><div>Loss Reporting Date : 1/3/2015</div>
                                                 </md-tooltip>
                                             </div>
                                         </td>

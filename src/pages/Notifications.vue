@@ -17,7 +17,7 @@
                         <div class="md-layout ">
 
                             <div class="md-layout-item md-size-100">
-                                <div class="alert ">
+                                <div class="alert " style="background:#306bff;">
                                     <button type="button" aria-hidden="true" class="close">
                                         ×
                                     </button>
@@ -47,7 +47,7 @@
                                     </button>
                                     <span data-notify="message"
                                     >
-                                         <md-icon class="md-info">play_circle_filled</md-icon>
+                                         <md-icon class="md-primary">play_circle_filled</md-icon>
                                           Job <router-link :to="notify3()">MilestoneA</router-link>
                                         was started a few minutes ago.</span
                                     >
@@ -60,7 +60,8 @@
                                         ×
                                     </button>
                                     <span data-notify="message">
-                                                                                 <md-icon class="md-info">nature</md-icon>
+                                                                                 <md-icon
+                                                                                         class="md-info">nature</md-icon>
 
                     A new Igloo Agent has been added (total is now 12)
                   </span>
@@ -93,7 +94,6 @@
         methods: {
 
 
-
             notify1() {
                 let item = {
                     date: "March 27,2019  9:13",
@@ -108,13 +108,13 @@
                 }
             },
             notify2() {
-                let item =  {
-                        date: "June 9,2019  12:53",
-                        config: "NoWindstorm",
-                        archived: false,
-                        status: "success",
-                        version: "2.1"
-                    }
+                let item = {
+                    date: "June 9,2019  12:53",
+                    config: "NoWindstorm",
+                    archived: false,
+                    status: "success",
+                    version: "2.1"
+                }
                 return {
                     name: 'Job Results',
                     params: {item: item}
@@ -149,7 +149,7 @@
 </script>
 
 
-<style>
+<style scoped>
     .title .md-icon.md-theme-default.md-icon-font {
         color: white;
     }
@@ -161,7 +161,7 @@
 
     .md-icon.md-theme-default.md-icon-font {
         color: #f0f0f0 !important;
-        margin-right:10px;
+        margin-right: 10px;
     }
 </style>
 

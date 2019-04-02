@@ -119,6 +119,14 @@
                 </stats-card>
             </div>
 
+
+            <md-button class="run-now md-fab" @click="config">
+                    <md-tooltip md-direction="right">Run now..</md-tooltip>
+                    <md-icon class="">play_arrow</md-icon>
+            </md-button>
+
+
+
         </div>
     </div>
 </template>
@@ -141,6 +149,22 @@
             OrderedTable
         },
         methods: {
+            config() {
+                let item = {
+                        name: "Current Configuration",
+                        model: "1.0",
+                        author: "John Doe",
+                        simulations: 1000,
+                        modified: "",
+                        description: ""
+                    }
+                this.$router.push(
+                    {
+                        name: 'Job Configuration',
+                        params: {item: item}
+                    }
+                )
+            },
             runs() {
                 this.$router.push('/jobruns')
             },
@@ -250,6 +274,16 @@
         color: #828282 !important;
     }
 
+    .run-now {
+        margin-top:50px;
+        height:75px;
+        width:75px;
+        background: #d9d9dd !important;
+    }
+    .run-now i {
+        font-size:70px !important;
+        /*color: #6792ff !important;*/
+    }
     </style>
 <style>
     .card-chart {

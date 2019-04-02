@@ -7,7 +7,7 @@
         <md-card>
           <md-card-header data-background-color="green">
             <h4 class="title">Tables </h4>
-            <p class="category">Used in All Job Configurations</p>
+            <p class="category"></p>
           </md-card-header>
           <md-card-content>
             <simple-table table-header-color="green"></simple-table>
