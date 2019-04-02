@@ -1,10 +1,11 @@
 <template>
     <div class="content">
         <div class="md-layout">
+
             <div class="md-layout-item md-medium-size-100 md-xsmall-size-100 md-size-100">
                 <md-card>
                     <md-card-header data-background-color="green">
-                        <h4 class="title">Job Configurations</h4>
+                        <h4 class="title">Saved Data Import Settings</h4>
                     </md-card-header>
                     <md-card-content>
                         <job-configs-table :configs="configs"></job-configs-table>
@@ -12,10 +13,9 @@
                 </md-card>
             </div>
 
-
-            <md-button @click="addConfiguration" class="md-fab md-primary md-fab-bottom-right">
-                <md-icon>add</md-icon>
-            </md-button>
+            <!--<md-button @click="addConfiguration" class="md-fab md-primary md-fab-bottom-left">-->
+                <!--<md-icon>add</md-icon>-->
+            <!--</md-button>-->
         </div>
     </div>
 

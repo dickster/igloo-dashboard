@@ -1,62 +1,74 @@
 <template>
     <div>
-        <md-table v-model="filteredUsers" :table-header-color="tableHeaderColor">
+        <div>
+            <md-table v-model="filteredUsers" :table-header-color="tableHeaderColor">
 
-            <md-table-toolbar class=" ">
-                <div class="md-toolbar-row">
-                    <div class="md-toolbar-section-start">
-                        <h4 class="md-66">5 total (1 running, 1 fail)</h4></div>
+                <md-table-toolbar class=" ">
+                    <div class="md-toolbar-row">
+                        <div class="md-toolbar-section-start">
+                            <h4 class="md-66">5 total (1 running, 1 fail)</h4></div>
 
-                    <div class="md-toolbar-section-end">
+                        <div class="md-toolbar-section-end">
 
-                        <!--<md-button v-model="filter" class="md-icon-button">-->
-                        <!--<md-icon>filter_list</md-icon>-->
-                        <!--</md-button>-->
+                            <!--<md-button v-model="filter" class="md-icon-button">-->
+                            <!--<md-icon>filter_list</md-icon>-->
+                            <!--</md-button>-->
 
 
-                        <drop-down>
-                            <a slot="title" class="dropdown-toggle" data-toggle="dropdown">
-                                <i class="material-icons">filter_list</i>
-                                <!--<span class="notification">5</span>-->
-                                <!--<p class="hidden-lg hidden-md">Notifications</p>-->
-                            </a>
-                            <ul class="dropdown-menu dropdown-menu-right">
-                                <li>
-                                    <md-checkbox v-model="failed">Failed</md-checkbox>
-                                </li>
-                                <li>
-                                    <md-checkbox v-model="running">Running</md-checkbox>
-                                </li>
-                                <li>
-                                    <md-checkbox v-model="success">Success</md-checkbox>
-                                </li>
-                                <li>
-                                    <md-checkbox v-model="archived">archived</md-checkbox>
-                                </li>
-                            </ul>
-                        </drop-down>
+                            <drop-down>
+                                <a slot="title" class="dropdown-toggle" data-toggle="dropdown">
+                                    <i class="material-icons">filter_list</i>
+                                    <!--<span class="notification">5</span>-->
+                                    <!--<p class="hidden-lg hidden-md">Notifications</p>-->
+                                </a>
+                                <ul class="dropdown-menu dropdown-menu-right">
+                                    <li>
+                                        <md-checkbox v-model="failed">Failed</md-checkbox>
+                                    </li>
+                                    <li>
+                                        <md-checkbox v-model="running">Running</md-checkbox>
+                                    </li>
+                                    <li>
+                                        <md-checkbox v-model="success">Success</md-checkbox>
+                                    </li>
+                                    <li>
+                                        <md-checkbox v-model="archived">archived</md-checkbox>
+                                    </li>
+                                </ul>
+                            </drop-down>
 
-                        <!--<md-switch v-model="filter" class="md-primary">Hide Incomplete Jobs</md-switch>-->
+                            <!--<md-switch v-model="filter" class="md-primary">Hide Incomplete Jobs</md-switch>-->
+                        </div>
                     </div>
-                </div>
 
-            </md-table-toolbar>
-            <md-table-row slot="md-table-row" slot-scope="{ item }">
-                <md-table-cell md-label="Date">
-                    <router-link :to="getRoute(item)">
-                        <a>{{ item.date }}</a>
-                    </router-link>
-                </md-table-cell>
-                <md-table-cell md-label="Archived">
-                    <md-switch v-model="item.archived" class="md-primary md-small"></md-switch>
-                    <md-icon v-if="item.archived" style="margin-top: -12px;">archive</md-icon>
-                </md-table-cell>
-                <md-table-cell md-label="Config">{{ item.config }}</md-table-cell>
-                <md-table-cell md-label="Status">{{ item.status }}</md-table-cell>
-                <md-table-cell md-label="Model Version">{{item.version}}</md-table-cell>
-            </md-table-row>
-        </md-table>
+                </md-table-toolbar>
+                <md-table-row slot="md-table-row" slot-scope="{ item }">
+                    <md-table-cell md-label="Date">
+                        <router-link :to="getRoute(item)">
+                            <a>{{ item.date }}</a>
+                        </router-link>
+                    </md-table-cell>
+                    <md-table-cell md-label="Archive">
+                        <md-switch v-model="item.archived" class="md-primary md-small"></md-switch>
+                        <md-icon v-if="item.archived" style="margin-top: -12px;">archive</md-icon>
+                    </md-table-cell>
+                    <md-table-cell md-label="Config">{{ item.config }}</md-table-cell>
+                    <md-table-cell md-label="Status">{{ item.status }}</md-table-cell>
+                    <md-table-cell md-label="Model Version">{{item.version}}</md-table-cell>
+                </md-table-row>
+            </md-table>
+        </div>
 
+
+        <md-speed-dial class=" md-accent">
+            <md-speed-dial-target>
+                <md-tooltip md-direction="right">Schedule Run...</md-tooltip>
+                <router-link :to="runCurrent()">
+                    <md-icon>directions_run</md-icon>
+                </router-link>
+            </md-speed-dial-target>
+
+        </md-speed-dial>
     </div>
 </template>
 
@@ -72,8 +84,19 @@
             }
         },
         methods: {
+            runCurrent() {
+                let item = {
+                    name: "Data Import Settings",
+                    model: "1.0",
+                    author: "John Doe",
+                    simulations: 1000,
+                    modified: "",
+                    description: ""
+                }
+                return {name: 'Data Import', params: {item: item}}
+            },
             getRoute(item) {
-                return {name:'Job Results', params: {item}}
+                return {name: 'Job Results', params: {item}}
             }
         },
         computed: {
@@ -112,14 +135,14 @@
                     },
                     {
                         date: "June 9,2019  12:53",
-                        config: "NoWindstorm",
+                        config: "default",
                         archived: false,
                         status: "success",
                         version: "2.1"
                     },
                     {
                         date: "August 17,2018  11:35",
-                        config: "MilestoneA",
+                        config: "default",
                         archived: false,
                         status: "fail",
                         version: "2.01"
@@ -133,7 +156,7 @@
                     },
                     {
                         date: "April 27,2019  9:53",
-                        config: "ProdJan",
+                        config: "default",
                         status: "success",
                         archived: false,
                         version: "2.0"

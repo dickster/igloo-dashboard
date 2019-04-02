@@ -121,11 +121,9 @@
 
 
             <md-button class="run-now md-fab" @click="config">
-                    <md-tooltip md-direction="right">Run now..</md-tooltip>
-                    <md-icon class="">play_arrow</md-icon>
+                    <md-tooltip md-direction="right">Schedule Run...</md-tooltip>
+                    <md-icon class="">directions_run</md-icon>
             </md-button>
-
-
 
         </div>
     </div>
@@ -160,7 +158,7 @@
                     }
                 this.$router.push(
                     {
-                        name: 'Job Configuration',
+                        name: 'Data Import',
                         params: {item: item}
                     }
                 )
@@ -281,7 +279,7 @@
         background: #d9d9dd !important;
     }
     .run-now i {
-        font-size:70px !important;
+        font-size:40px !important;
         /*color: #6792ff !important;*/
     }
     </style>

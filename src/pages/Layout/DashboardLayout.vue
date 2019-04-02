@@ -13,8 +13,8 @@
         <p>Job Runs</p>
       </sidebar-link>
       <sidebar-link to="/configurations">
-        <md-icon>library_books</md-icon>
-        <p>Job Configurations</p>
+        <md-icon>star</md-icon>
+        <p>Data Import</p>
       </sidebar-link>
       <sidebar-link to="/notifications">
         <md-icon>notifications</md-icon>

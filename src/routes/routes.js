@@ -65,13 +65,13 @@ const routes = [
             },
             {
                 path: "configurations",
-                name: "Job Configurations",
+                name: "Data Imports",
                 component: JobConfigurations,
                 props:true
             },
             {
                 path: "configuration",
-                name: "Job Configuration",
+                name: "Data Import",
                 component: JobConfiguration,
                 props:true
             },
@@ -89,7 +89,7 @@ const routes = [
             },
             {
                 path: "config/tables",
-                name: "ILS Tables",
+                name: "Data Import",
                 component: ILS_Tables,
                 props: true
             },

@@ -14,45 +14,29 @@
 
 
                             <div class="md-layout md-gutter">
-                                <!--<div class="md-layout-item md-size-100">-->
-                                    <!--<md-field>-->
-                                        <!--<label>Name</label>-->
-                                        <!--<md-input v-model="item.name"/>-->
-                                    <!--</md-field>-->
-                                <!--</div>-->
-            <!--<div class="md-layout-item md-size-100">-->
-                                    <!--<md-field>-->
-                                        <!--<label>Description</label>-->
-                                        <!--<md-input v-model="item.description"/>-->
-                                    <!--</md-field>-->
-                                <!--</div>-->
 
                                 <div class="md-layout-item md-size-25">
                                     <md-field>
                                         <label>Model Version</label>
-                                        <md-select>
-                                            <md-option>2.0</md-option>
-                                            <md-option>3.0</md-option>
-                                            <md-option>3.1</md-option>
+                                        <md-select v-model="item.model">
+                                            <md-option value="0.9">0.9</md-option>
+                                            <md-option value="1.0">1.0</md-option>
+                                            <md-option value="2.0">2.0</md-option>
                                         </md-select>
                                     </md-field>
                                 </div>
-                            </div>
-
-                            <div class="md-layout md-gutter">
                                 <div class="md-layout-item md-size-25">
                                     <md-field>
                                         <label>Simulations</label>
                                         <md-input type="number" v-model="item.simulations"/>
                                     </md-field>
                                 </div>
-
-
                             </div>
+
 
                             <div class="md-layout md-gutter row">
 
-                                <label class="md-layout-item md-size-25">ILS Tables</label>
+                                <label class="md-layout-item md-size-25">Data Import</label>
                                 <router-link class="md-layout-item md-size-75" :to="tables(item)">
                                     35 Tables used (5 have errrors)
                                 </router-link>
@@ -81,11 +65,29 @@
 
                             </div>
 
-                            <md-card-actions>
-                                <router-link tag="md-button" to="/configurations" class="back md-raised md-primary">
-                                    <md-icon>reply</md-icon>Back to Job Configurations
-                                </router-link>
-                            </md-card-actions>
+                            <div class="md-layout md-gutter row">
+                                <div class="md-layout-item md-size-33" style="min-height:95px;">
+                                <md-checkbox v-model="save" >Save these data import settings so it can be
+                                    re-run later
+                                </md-checkbox>
+                                </div>
+
+                                <div class="md-layout-item md-size-50">
+                                <md-field v-if="save">
+                                    <label>Name</label>
+                                    <md-input v-model="item.name"/>
+                                </md-field>
+                                </div>
+                            </div>
+
+                            <div class="md-layout md-gutter row">
+
+                            </div>
+
+                            <md-button class="run-now md-fab" click="runNow">
+                                <md-tooltip md-direction="right">Run now..</md-tooltip>
+                                <md-icon class="">play_arrow</md-icon>
+                            </md-button>
 
 
                         </form>
@@ -104,33 +106,37 @@
     export default {
         props: ['item'],
         data: () => ({
+            save: false
         }),
         methods: {
 
+            runNow() {
+                this.$router.push('/jobruns')
+            },
             contracts(item) {
                 return {
-                    name:'Contracts',
-                    params:{item:item}
+                    name: 'Contracts',
+                    params: {item: item}
                 }
 
             },
             losses(item) {
                 return {
-                    name:'Historical Losses',
-                    params:{item:item}
+                    name: 'Historical Losses',
+                    params: {item: item}
                 }
 
             },
             riskMeasures(item) {
                 return {
-                    name:'Risk Measures',
-                    params:{item:item}
+                    name: 'Risk Measures',
+                    params: {item: item}
                 }
             },
             tables(item) {
                 return {
-                    name:'ILS',
-                    params:{item:item}
+                    name: 'ILS',
+                    params: {item: item}
                 }
 
             }
@@ -146,7 +152,11 @@
         flex: 0 1 15% !important;
     }
 
+    label.md-size-25 {
+        font-size:22px;
+    }
+
     form .md-layout.row {
-        margin-bottom:24px;
+        margin-bottom: 24px;
     }
 </style>

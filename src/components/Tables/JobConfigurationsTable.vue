@@ -2,16 +2,6 @@
     <div>
         <md-table v-model="configs" table-header-color="green">
 
-            <md-table-toolbar class=" ">
-                <div class="md-toolbar-row">
-                    <div class="md-toolbar-section-start">
-                        <h4 class="md-66">{{configs.length}} Job Configurations</h4></div>
-
-                    <div class="md-toolbar-section-end">
-                    </div>
-                </div>
-
-            </md-table-toolbar>
             <md-table-row slot="md-table-row" slot-scope="{ item }">
                 <md-table-cell md-label="Date">
                     <router-link :to="getRoute(item)">
@@ -36,13 +26,6 @@
                                 <router-link :to="run(item)">
                                     <md-icon>directions_run</md-icon>
                                     Run
-                                </router-link>
-                            </md-menu-item>
-
-                            <md-menu-item>
-                                <router-link :to="save(item)">
-                                    <md-icon>save</md-icon>
-                                    Save
                                 </router-link>
                             </md-menu-item>
 
@@ -80,19 +63,19 @@
         props: ['configs'],
         methods: {
             copy(item) {
-                return {name: 'Job Configuration', params: {item}}
+                return {name: 'Data Import', params: {item}}
             },
             run(item) {
                 return {name: 'Job Runs', params: {item}}
             },
             save(item) {
-                return {name: 'Job Configuration', params: {item}}
+                return {name: 'Data Import', params: {item}}
             },
             edit(item) {
-                return {name: 'Job Configuration', params: {item}}
+                return {name: 'Data Import', params: {item}}
             },
             getRoute(item) {
-                return {name: 'Job Configuration', params: {item}}
+                return {name: 'Data Import', params: {item}}
             }
         },
         computed: {},

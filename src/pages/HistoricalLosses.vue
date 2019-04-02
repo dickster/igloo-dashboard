@@ -187,7 +187,7 @@
                     </md-card-content>
                     <md-card-actions>
                         <router-link tag="md-button" to="/configurations" class="back md-raised md-primary">
-                            <md-icon>reply</md-icon>Back to Job Configurations
+                            <md-icon>reply</md-icon>Back to Data Import
                         </router-link>
                     </md-card-actions>
                 </md-card>

@@ -8,8 +8,8 @@
 
           <md-card-header data-background-color="green">
             <h4 class="title">Job Runs </h4>
-            <p class="category">note that older job runs will be deleted unless you <a>archive</a>
-              <md-icon>archive</md-icon>them</p>
+            <p class="category">Note that older job runs will be deleted unless you <a>archive</a>
+              <md-icon>archive</md-icon>them.   There is a limit 0 10 archives.</p>
           </md-card-header>
           <md-card-content>
             <job-runs-table table-header-color="green"></job-runs-table>

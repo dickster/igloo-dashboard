@@ -6,8 +6,8 @@
       >
         <md-card>
           <md-card-header data-background-color="green">
-            <h4 class="title">ILS Tables </h4>
-            <p class="category">you can import your own data into ILS database</p>
+            <h4 class="title">Tables/Excel (vernacular?)</h4>
+            <p class="category">specify DB, Excel, CAT data to be used by model</p>
           </md-card-header>
           <md-card-content>
             <simple-table table-header-color="green"></simple-table>

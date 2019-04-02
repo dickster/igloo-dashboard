@@ -155,7 +155,12 @@
     }
 
     .md-theme-default .alert span a {
-        color: white;
+        color: #d3d9e3;
+        text-decoration: underline;
+    }
+
+    .md-theme-default .alert span a:hover {
+        color: white !important;
         text-decoration: underline;
     }
 
