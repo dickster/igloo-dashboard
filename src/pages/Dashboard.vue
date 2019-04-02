@@ -1,8 +1,9 @@
 <template>
     <div class="content">
         <div class="md-layout">
-            <div
-                    class="md-layout-item md-medium-size-100 md-xsmall-size-100 md-size-50"
+            <div @click="runs"
+
+                    class="md-layout-item md-medium-size-100 md-xsmall-size-100 md-size-50 "
             >
                 <chart-card
                         :chart-data="dailySalesChart.data"
@@ -28,7 +29,7 @@
                     </template>
                 </chart-card>
             </div>
-            <div
+            <div @click="lastrun"
                     class="md-layout-item md-medium-size-100 md-xsmall-size-100 md-size-50"
             >
                 <chart-card
@@ -39,9 +40,9 @@
                         data-background-color="purple"
                 >
                     <template slot="content">
-                        <h4 class="title">Last Run Job</h4>
+                        <h4 class="title">Last Successful Job</h4>
                         <p class="category">
-                            FooBar-Test  : Underwriting Profit
+                            TestNoContractC : Underwriting Profit
                         </p>
                     </template>
 
@@ -139,6 +140,26 @@
             NavTabsTable,
             OrderedTable
         },
+        methods: {
+            runs() {
+                this.$router.push('/jobruns')
+            },
+            lastrun() {
+                let item = {
+                    date: "March 27,2019  9:13",
+                    config: "TestNoContractC",
+                    status: "running",
+                    archived: false,
+                    version: "2.1"
+                }
+                this.$router.push(
+                    {
+                        name: 'Job Results',
+                        params: {item: item}
+                    }
+                )
+            }
+        },
         data() {
             return {
                 dailySalesChart: {
@@ -196,7 +217,7 @@
                             showGrid: false
                         },
                         low: 0,
-                        high:500,
+                        high: 500,
                         chartPadding: {
                             top: 0,
                             right: 5,
@@ -222,3 +243,20 @@
         }
     };
 </script>
+
+
+<style scoped>
+    .md-card-actions i.md-icon.md-theme-default.md-icon-font {
+        color: #828282 !important;
+    }
+
+    </style>
+<style>
+    .card-chart {
+        cursor:pointer;
+        filter:saturate(.8)
+    }
+    .card-chart:hover {
+        filter:saturate(1)
+    }
+</style>
