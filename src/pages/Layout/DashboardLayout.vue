@@ -12,9 +12,9 @@
         <md-icon>directions_run</md-icon>
         <p>Job Runs</p>
       </sidebar-link>
-      <sidebar-link to="/configurations">
+      <sidebar-link to="/configuration">
         <md-icon>star</md-icon>
-        <p>Data Import</p>
+        <p>Data (vernacular?)</p>
       </sidebar-link>
       <sidebar-link to="/notifications">
         <md-icon>notifications</md-icon>

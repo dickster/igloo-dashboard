@@ -38,7 +38,7 @@
 
                                 <label class="md-layout-item md-size-25">Data Import</label>
                                 <router-link class="md-layout-item md-size-75" :to="tables(item)">
-                                    35 Tables used (5 have errrors)
+                                    10 Excel files, 1 CAT & 3 DB used (5 errors)
                                 </router-link>
 
                             </div>
@@ -66,25 +66,27 @@
                             </div>
 
                             <div class="md-layout md-gutter row">
-                                <div class="md-layout-item md-size-33" style="min-height:95px;">
-                                <md-checkbox v-model="save" >Save these data import settings so it can be
-                                    re-run later
-                                </md-checkbox>
+                                <div class="md-layout-item md-size-50" style="min-height:0;">
+                                    <md-checkbox v-model="save">Save these data import settings so it can be
+                                        re-run later
+                                    </md-checkbox>
                                 </div>
-
-                                <div class="md-layout-item md-size-50">
-                                <md-field v-if="save">
-                                    <label>Name</label>
-                                    <md-input v-model="item.name"/>
-                                </md-field>
+                                <div class="md-layout-item md-size-50" style="text-align:right;padding-right:40px;">
+                                    <router-link to="/configurations">Show all previously saved settings/data/???
+                                    </router-link>
+                                </div>
+                            </div>
+                            <div class="md-layout md-gutter row" style="margin-top:-35px;">
+                                <div class="md-layout-item md-size-33" >
+                                    <md-field v-if="save">
+                                        <label>Name</label>
+                                        <md-input v-model="item.name"/>
+                                    </md-field>
                                 </div>
                             </div>
 
-                            <div class="md-layout md-gutter row">
 
-                            </div>
-
-                            <md-button class="run-now md-fab" click="runNow">
+                            <md-button class="run-now md-fab" @click="runNow">
                                 <md-tooltip md-direction="right">Run now..</md-tooltip>
                                 <md-icon class="">play_arrow</md-icon>
                             </md-button>
@@ -95,6 +97,12 @@
                 </md-card>
             </div>
 
+            <md-snackbar :md-duration="3000" :md-active.sync="showSnackbar" md-persistent>
+                <router-link to="/jobruns">Scheduling Job {{item.name}}</router-link>
+                <md-button class="md-primary" @click="showSnackbar = false">Retry</md-button>
+            </md-snackbar>
+
+
         </div>
     </div>
 
@@ -104,13 +112,15 @@
 
 
     export default {
-        props: ['item'],
+        props: ['it'],
         data: () => ({
+            item:null,
             save: false
         }),
         methods: {
 
             runNow() {
+                console.log('running')
                 this.$router.push('/jobruns')
             },
             contracts(item) {
@@ -141,6 +151,21 @@
 
             }
         },
+        mounted() {
+            if (!this.it) {
+                this.item = {
+                    name: "Current Data Settings for ILS",
+                    model: "1.0",
+                    simulations: 1000,
+                    author: "",
+                    modified: "",
+                    description: ""
+                }
+            }
+            else {
+                this.item = it
+            }
+        },
         components: {}
     };
 </script>
@@ -153,7 +178,7 @@
     }
 
     label.md-size-25 {
-        font-size:22px;
+        font-size: 18px;
     }
 
     form .md-layout.row {

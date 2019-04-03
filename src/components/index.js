@@ -10,6 +10,7 @@ import SimpleTable from "./Tables/SimpleTable.vue";
 import JobRunsTable from "./Tables/JobRunsTable.vue";
 import JobConfigurationsTable from "./Tables/JobConfigurationsTable.vue";
 import BasicChart from "./Charts/BasicChart.vue";
+import DonutChart from "./Charts/DonutChart.vue";
 import ScatterChart from "./Charts/ScatterChart.vue";
 import BarChart from "./Charts/BarChart.vue";
 
@@ -17,6 +18,7 @@ export {
   JobRunsTable,
   JobConfigurationsTable,
   ChartCard,
+    DonutChart,
   NavTabsCard,
   StatsCard,
   NavTabsTable,
