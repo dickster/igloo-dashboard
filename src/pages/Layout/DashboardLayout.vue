@@ -20,10 +20,10 @@
         <md-icon>notifications</md-icon>
         <p>Notifications</p>
       </sidebar-link>
-      <sidebar-link to="/favourites">
-        <md-icon>star</md-icon>
-        <p>Favourites</p>
-      </sidebar-link>
+      <!--<sidebar-link to="/favourites">-->
+        <!--<md-icon>star</md-icon>-->
+        <!--<p>Favourites</p>-->
+      <!--</sidebar-link>-->
         <!--<p>Last Run Job</p>-->
         <!--<p>Config 1</p>-->
         <!--<p>Tables > CAT</p>-->

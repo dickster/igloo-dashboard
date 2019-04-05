@@ -66,7 +66,7 @@
                 return {name: 'Data Import', params: {item}}
             },
             run(item) {
-                return {name: 'Job Runs', params: {item}}
+                return {name: 'Data Import', params: {item}}
             },
             save(item) {
                 return {name: 'Data Import', params: {item}}
@@ -75,6 +75,7 @@
                 return {name: 'Data Import', params: {item}}
             },
             getRoute(item) {
+                console.log(JSON.stringify(item))
                 return {name: 'Data Import', params: {item}}
             }
         },

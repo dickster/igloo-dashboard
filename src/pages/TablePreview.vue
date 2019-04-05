@@ -5,6 +5,7 @@
                 <md-card>
                     <md-card-header data-background-color="green">
                         <h4 class="title">My Table </h4>
+                        <md-button style="float:right" class=""><md-icon>filter_list</md-icon>Show rows with errors</md-button>
                         <p class="category">Preview of table contents here....</p>
                     </md-card-header>
                     <md-card-content>

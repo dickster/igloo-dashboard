@@ -80,7 +80,7 @@
             <div class="md-layout-item md-size-50">
                 <md-card>
                     <md-card-header data-background-color="green">
-                        <h4 class="title">Portfolio</h4>
+                        <h4 class="title">Profit By Contract</h4>
 
                     </md-card-header>
                     <md-card-content>
@@ -113,8 +113,136 @@
                     </md-card-expand>
                 </md-card>
             </div>
+
+            <div v-if="showContracts" class="md-layout-item md-size-50">
+                <md-card>
+                    <md-card-header data-background-color="green">
+                        <h4 class="title">Contract Chart here</h4>
+
+                    </md-card-header>
+                    <md-card-content>
+                        <div>
+<md-icon class="chart-icon">show_chart</md-icon>
+                        </div>
+                    </md-card-content>
+                    <md-card-expand>
+
+                        <md-card-actions md-alignment="space-between">
+
+                            <md-card-expand-trigger>
+                                <md-button class="md-icon-button">
+                                    <md-icon>keyboard_arrow_down</md-icon>
+                                </md-button>
+                            </md-card-expand-trigger>
+                        </md-card-actions>
+                        <md-card-expand-content>
+                            <md-card-content >
+                                <md-field style="margin-top:-40px;">
+                                    <label>NAV</label>
+                                    <md-select  v-model="nav" md-dense>
+                                        <md-option >Simulated Fund NAV</md-option>
+                                        <md-option >Fund NAV Funnel</md-option>
+                                        <md-option >Simulated Contract NAV</md-option>
+                                        <md-option >Contract NAV Funnel</md-option>
+                                    </md-select>
+                                </md-field>
+                            </md-card-content>
+                        </md-card-expand-content>
+                    </md-card-expand>
+                </md-card>
+            </div>
+            <div v-if="showContracts" class="md-layout-item md-size-50">
+                <md-card>
+                    <md-card-header data-background-color="green">
+                        <h4 class="title">Yet another contract Chart here</h4>
+
+                    </md-card-header>
+                    <md-card-content>
+                        <div>
+                            <md-icon class="chart-icon">pie_chart</md-icon>
+                        </div>
+                    </md-card-content>
+                    <md-card-expand>
+
+                        <md-card-actions md-alignment="space-between">
+
+                            <md-card-expand-trigger>
+                                <md-button class="md-icon-button">
+                                    <md-icon>keyboard_arrow_down</md-icon>
+                                </md-button>
+                            </md-card-expand-trigger>
+                        </md-card-actions>
+                        <md-card-expand-content>
+                            <md-card-content >
+                                <md-checkbox>some chart option</md-checkbox>
+                            </md-card-content>
+                        </md-card-expand-content>
+                    </md-card-expand>
+                </md-card>
+            </div>
+            <div v-if="showFunds" class="md-layout-item md-size-50">
+                <md-card>
+                    <md-card-header data-background-color="green">
+                        <h4 class="title">A Fund Related Chart</h4>
+
+                    </md-card-header>
+                    <md-card-content>
+                        <div>
+                            <md-icon class="chart-icon">bubble_chart</md-icon>
+                        </div>
+                    </md-card-content>
+                    <md-card-expand>
+
+                        <md-card-actions md-alignment="space-between">
+
+                            <md-card-expand-trigger>
+                                <md-button class="md-icon-button">
+                                    <md-icon>keyboard_arrow_down</md-icon>
+                                </md-button>
+                            </md-card-expand-trigger>
+                        </md-card-actions>
+                        <md-card-expand-content>
+                            <md-card-content >
+
+                            </md-card-content>
+                        </md-card-expand-content>
+                    </md-card-expand>
+                </md-card>
+            </div>
+            <div v-if="showFunds" class="md-layout-item md-size-50">
+                <md-card>
+                    <md-card-header data-background-color="green">
+                        <h4 class="title">What? Another Fund Chart?</h4>
+
+                    </md-card-header>
+                    <md-card-content>
+                        <div>
+                            <md-icon class="chart-icon">bar_chart</md-icon>
+                        </div>
+                    </md-card-content>
+                    <md-card-expand>
+
+                        <md-card-actions md-alignment="space-between">
+
+                            <md-card-expand-trigger>
+                                <md-button class="md-icon-button">
+                                    <md-icon>keyboard_arrow_down</md-icon>
+                                </md-button>
+                            </md-card-expand-trigger>
+                        </md-card-actions>
+                        <md-card-expand-content>
+                            <md-card-content>
+
+                            </md-card-content>
+                        </md-card-expand-content>
+                    </md-card-expand>
+                </md-card>
+            </div>
+
             <div class="md-layout-item md-size-100">
-                <h3></h3>
+                <md-button @click="showContracts=!showContracts">Show charts relating to Contracts</md-button>
+                <md-button @click="showFunds=!showFunds">Show charts relating to Funds</md-button>
+                <md-button>(group charts into sections...etc...)</md-button>
             </div>
 
             <router-link tag="md-button" to="/jobruns" class="back md-raised md-primary">
@@ -123,6 +251,8 @@
             </router-link>
 
         </div>
+        <div class="md-layout"></div>
+
     </div>
 </template>
 
@@ -165,6 +295,7 @@
             updatePortfolio() {
                 switch (this.portfolio) {
                     case 0:
+                        this.donutOptions.title.text = 'Average Losses'
                         this.donutData.datasets[0].data = [
                             10179985,
                             6996990,
@@ -179,6 +310,7 @@
                         ]
                         break
                     case 1:
+                        this.donutOptions.title.text = 'Average Loss Ratio'
                         this.donutData.datasets[0].data = [
                             21544942,
                             14808444,
@@ -189,11 +321,11 @@
                             31884117,
                             18114784,
                             12829809,
-
                         ]
                         break
                     case 2:
-                       this. donutData.datasets[0].data = [
+                        this.donutOptions.title.text = 'Probability of Profit'
+                        this. donutData.datasets[0].data = [
                             93,
                             96,
                             90,
@@ -216,6 +348,9 @@
         },
         data() {
             return {
+                nav:'Simulated Fund NAV',
+                showContracts:false,
+                showFunds:false,
                 donutData : {
                     labels: ['UPC_FHCF', 'ACIC_FHCF', 'FS_FHCF', 'Knockout', 'Layer 1', 'Layer 2', 'Layer 3', 'Layer 4', 'Layer 5'],
                     datasets: [
@@ -240,7 +375,11 @@
                     maintainAspectRatio: false,
                     animation: {
                         animateRotate: false
-                    }
+                    },
+                    title: {
+                        display: true,
+                        text: 'Underwriting Profit'
+                    },
                 },
 
                 layer1: false,
@@ -581,15 +720,14 @@
     };
 </script>
 
-<style>
-
+<style >
+.chart-icon {
+    width:300px;
+    height:190px;
+    font-size:240px !important;
+}
 </style>
 
 
-data.reverse()
-
-var
-
-colors.reverse()
 
 

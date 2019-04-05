@@ -1,9 +1,7 @@
 <template>
     <div class="content">
         <div class="md-layout">
-            <div
-                    class="md-layout-item md-medium-size-100 md-xsmall-size-100 md-size-100"
-            >
+            <div class="md-layout-item md-medium-size-100 md-xsmall-size-100 md-size-100">
                 <md-card>
 
                     <md-card-header data-background-color="green">
@@ -15,8 +13,6 @@
                     </md-card-header>
 
                     <md-card-content>
-
-
 
                         <div class="md-content md-table md-theme-default" table-header-color="green">
                             <div class="md-toolbar md-table-toolbar md-transparent   md-theme-default md-elevation-0">
@@ -248,5 +244,9 @@
         color: white;
         margin-top: -14px;
         margin-left: -2px;
+    }
+
+    .md-list-item-text {
+        position:inherit !important;
     }
 </style>

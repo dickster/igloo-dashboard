@@ -91,15 +91,15 @@
                                 <md-icon class="">play_arrow</md-icon>
                             </md-button>
 
-
                         </form>
                     </md-card-content>
                 </md-card>
             </div>
 
             <md-snackbar :md-duration="3000" :md-active.sync="showSnackbar" md-persistent>
-                <router-link to="/jobruns">Scheduling Job {{item.name}}</router-link>
-                <md-button class="md-primary" @click="showSnackbar = false">Retry</md-button>
+                <router-link style="color:#d7eeec;" to="/jobruns">Scheduling Job {{item.name}}...</router-link>
+                <md-button class="md-raised md-accent" @click="gotoJobs">View Job Runs</md-button>
+                <md-button class="md-accent" @click="showSnackbar = false">Cancel Job</md-button>
             </md-snackbar>
 
 
@@ -114,14 +114,18 @@
     export default {
         props: ['it'],
         data: () => ({
+            showSnackbar:false,
             item:null,
             save: false
         }),
         methods: {
+            gotoJobs() {
+                this.$router.push('/jobruns')
+            },
 
             runNow() {
-                console.log('running')
-                this.$router.push('/jobruns')
+                this.showSnackbar = true
+
             },
             contracts(item) {
                 return {

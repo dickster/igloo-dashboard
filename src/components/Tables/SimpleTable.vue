@@ -14,6 +14,7 @@
                     </md-icon>
                     <md-icon v-if="item.status=='ok'">thumb_up</md-icon>
                     <md-icon style="color:#c93e34" v-if="item.status.indexOf('error')>=0"><md-tooltip md-direction="right">{{item.status}}</md-tooltip>warning</md-icon>
+                    <md-icon v-if="item.status=='dirty'">help</md-icon>
 
                 </md-table-cell>
                 <md-table-cell md-label="Type">{{ item.type }}</md-table-cell>
@@ -180,8 +181,8 @@
             },
             doImport(item) {
                 item.dirty = false
-                this.loading = true
-                setTimeout(x => this.loading = false, 1200)
+                item.status='loading'
+                setTimeout(x => item.status = 'ok', 1200)
 
             },
             preview(item) {
@@ -240,13 +241,13 @@
                     {
                         source: "Peril2018",
                         dirty: true,
-                        status:'4 errors',
+                        status:'dirty',
                         type: "Excel",
                         rows: "196564",
                     },
                     {
                         source: "/stats/info: xyz-2017",
-                        status:'ok',
+                        status:'4 errors',
                         type: "DB",
                         rows: "2,934,237",
                     },

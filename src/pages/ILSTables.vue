@@ -6,7 +6,7 @@
       >
         <md-card>
           <md-card-header data-background-color="green">
-            <h4 class="title">Tables/Excel (vernacular?)</h4>
+            <h4 class="title">Tables/Excel (vernacular? - validation not handled here...discuss)</h4>
             <p class="category">specify DB, Excel, CAT data to be used by model</p>
           </md-card-header>
           <md-card-content>
